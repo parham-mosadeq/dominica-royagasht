@@ -1,6 +1,4 @@
 import React, { useContext } from 'react';
-import { useEffect } from 'react';
-
 // *context
 import { formContext } from '../context/FormController';
 
