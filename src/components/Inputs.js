@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useEffect } from 'react';
 
 // *context
 import { formContext } from '../context/FormController';
@@ -12,9 +13,12 @@ const Inputs = () => {
     e.preventDefault();
   };
 
+  const resetFrom = () => {
+    window.location.reload();
+  };
   return (
-    <div className=''>
-      <form className='' onSubmit={(e) => handleSubmit(e)}>
+    <div>
+      <form onSubmit={(e) => handleSubmit(e)}>
         {/* name lastName section start */}
         <input
           className=' w-full bg-clr-blue-main block m-2 cursor-pointer placeholder:text-black focus:outline-none rounded-md pl-2 pr-2 pt-1 pm-1'
@@ -184,12 +188,27 @@ const Inputs = () => {
           )}
         </div>
 
-        <button
-          className='block bg-clr-purple-main p-1 mt-4 rounded-md text-clr-yellow-main hover:shadow-lg  '
-          onClick={(e) => dispatch({ type: 'SUBMIT_FORM', payload: e })}
-        >
-          submit
-        </button>
+        {/* btn container start */}
+        <div className='flex  justify-between items-center'>
+          {/* submit button start */}
+          <button
+            className='block bg-clr-purple-main p-1 mt-4 rounded-md text-clr-yellow-main hover:shadow-lg  '
+            onClick={(e) => dispatch({ type: 'SUBMIT_FORM', payload: e })}
+          >
+            submit
+          </button>
+          {/* submit button end */}
+          {/* clear btn start */}
+          <button
+            className='block bg-teal-900 p-1 mt-4 rounded-md text-white capitalize hover:shadow-lg  '
+            onClick={(e) => resetFrom()}
+          >
+            {' '}
+            clear form{' '}
+          </button>
+          {/* clear btn end */}
+        </div>
+        {/* btn container end */}
       </form>
 
       <div className=''>{` هزینه برای آقا/خانم ${state.showDetails} `}</div>

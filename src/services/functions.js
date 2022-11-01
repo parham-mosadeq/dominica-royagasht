@@ -22,6 +22,7 @@ const calculatePrice = (
     parentsCount,
     showDetails,
   } = state;
+
   if (
     !firstName &&
     !lastName &&
@@ -32,6 +33,56 @@ const calculatePrice = (
   ) {
     return showDetails;
   }
+
+  // new functions start
+
+  if (
+    firstName &&
+    lastName &&
+    isMarried &&
+    isChildrenBelowSixteen &&
+    isChildrenAboveSixteen
+  ) {
+    showDetails = ` ${firstName} ${lastName} ${toLocale(
+      childrenAboveSixteenPrice * +childrenAboveSixteen +
+        childrenBelowSixteenPrice * +childrenBelowSixteen +
+        eachParent * +parentsCount +
+        marriedPerson
+    )}$`;
+    return showDetails;
+  }
+
+
+if (firstName && lastName && isMarried && isParents && isChildrenBelowSixteen) {
+
+  showDetails = ` ${firstName} ${lastName} ${toLocale(
+    childrenBelowSixteenPrice * +childrenBelowSixteen +
+      eachParent * +parentsCount +
+      marriedPerson
+  )}$`;
+  return showDetails;
+}
+
+
+
+
+  if (firstName && lastName && isMarried && isParents) {
+    showDetails = ` ${firstName} ${lastName} ${toLocale(
+      eachParent * +parentsCount + marriedPerson
+    )}$`;
+    return showDetails;
+  }
+
+  if (firstName && lastName && isMarried && isChildrenBelowSixteen) {
+    showDetails = ` ${firstName} ${lastName} ${toLocale(
+      childrenBelowSixteenPrice * +childrenBelowSixteen +
+        eachParent * +parentsCount +
+        marriedPerson
+    )}$`;
+    return showDetails;
+  }
+
+  // new functions start end
 
   if (
     firstName &&
