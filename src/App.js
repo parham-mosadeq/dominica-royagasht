@@ -3,12 +3,19 @@ import React from 'react';
 import Inputs from './components/Inputs';
 // *context
 import { FormController } from './context/FormController';
-
+// *logo
+import logo from './images/logo.png';
 const App = () => {
   return (
     <>
-      <div className='block  p-3 leading-7 m-auto  text-center w-full bg-black bg-clr-purple-main text-white '>
-        <h1>رویاگشت</h1>
+      <div className='block  pt-1 pb-2 pl-0 pr-0 leading-7 m-auto  text-center w-full bg-black bg-clr-purple-main text-white '>
+        <div>
+          <img
+            className='block w-20 ml-auto mr-auto mt-0 object-cover  '
+            src={logo}
+            alt=''
+          />
+        </div>
         <p> فرم زیر را کامل پر کنید</p>
       </div>
       <div className='h-screen bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-center'>
