@@ -193,7 +193,7 @@ const Inputs = () => {
             className='block bg-clr-purple-main p-1 mt-4 rounded-md text-clr-yellow-main hover:shadow-lg  '
             onClick={(e) => dispatch({ type: 'SUBMIT_FORM', payload: e })}
           >
-            submit
+            ثبت
           </button>
           {/* submit button end */}
           {/* clear btn start */}
@@ -202,7 +202,7 @@ const Inputs = () => {
             onClick={(e) => resetFrom()}
           >
             {' '}
-            clear form{' '}
+            پاک کن{' '}
           </button>
           {/* clear btn end */}
         </div>
